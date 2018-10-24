@@ -12,10 +12,13 @@ public class FirstBot {
 	}
 	public static void Chat(){
 		Scanner scan = new Scanner(System.in);
-		System.out.print("Hello\n");
+		System.out.print("Hello \n"+ FirstPack.Questions.GetAnser("help"));
 		while (true){
-			String s = scan.nextLine();
-			System.out.println(FirstPack.Questions.GetAnser(s));
+			String s = scan.nextLine().toLowerCase();
+			if (s.equals("exit"))
+				break;
+			else
+				System.out.println(FirstPack.Questions.GetAnser(s));
 		}		
 	}
 }
